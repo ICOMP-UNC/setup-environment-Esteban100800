@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles /home/esteban/Documentos/setup-environment-Esteban100800//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles /home/esteban/Documentos/setup-environment-Esteban100800/lib/libdyn//CMakeFiles/progress.marks
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,105 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named OperatingSystems
+# Convenience name for target.
+lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule:
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule
+.PHONY : lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule
 
-# Build rule for target.
-OperatingSystems: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OperatingSystems
-.PHONY : OperatingSystems
-
-# fast build rule for target.
-OperatingSystems/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/build
-.PHONY : OperatingSystems/fast
-
-#=============================================================================
-# Target rules for targets named DynamicLibrary
-
-# Build rule for target.
-DynamicLibrary: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DynamicLibrary
+# Convenience name for target.
+DynamicLibrary: lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule
 .PHONY : DynamicLibrary
 
 # fast build rule for target.
 DynamicLibrary/fast:
-	$(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/build
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/build
 .PHONY : DynamicLibrary/fast
 
-#=============================================================================
-# Target rules for targets named StaticLibrary
-
-# Build rule for target.
-StaticLibrary: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 StaticLibrary
-.PHONY : StaticLibrary
-
-# fast build rule for target.
-StaticLibrary/fast:
-	$(MAKE) $(MAKESILENT) -f lib/libsta/CMakeFiles/StaticLibrary.dir/build.make lib/libsta/CMakeFiles/StaticLibrary.dir/build
-.PHONY : StaticLibrary/fast
-
-src/greetings.o: src/greetings.c.o
-.PHONY : src/greetings.o
+src/shared.o: src/shared.c.o
+.PHONY : src/shared.o
 
 # target to build an object file
-src/greetings.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/greetings.c.o
-.PHONY : src/greetings.c.o
+src/shared.c.o:
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/src/shared.c.o
+.PHONY : src/shared.c.o
 
-src/greetings.i: src/greetings.c.i
-.PHONY : src/greetings.i
-
-# target to preprocess a source file
-src/greetings.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/greetings.c.i
-.PHONY : src/greetings.c.i
-
-src/greetings.s: src/greetings.c.s
-.PHONY : src/greetings.s
-
-# target to generate assembly for a file
-src/greetings.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/greetings.c.s
-.PHONY : src/greetings.c.s
-
-src/main.o: src/main.c.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src/shared.i: src/shared.c.i
+.PHONY : src/shared.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/shared.c.i:
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/src/shared.c.i
+.PHONY : src/shared.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src/shared.s: src/shared.c.s
+.PHONY : src/shared.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/shared.c.s:
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/src/shared.c.s
+.PHONY : src/shared.c.s
 
 # Help Target
 help:
@@ -212,14 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DynamicLibrary"
-	@echo "... OperatingSystems"
-	@echo "... StaticLibrary"
-	@echo "... src/greetings.o"
-	@echo "... src/greetings.i"
-	@echo "... src/greetings.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/shared.o"
+	@echo "... src/shared.i"
+	@echo "... src/shared.s"
 .PHONY : help
 
 
@@ -231,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/esteban/Documentos/setup-environment-Esteban100800 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

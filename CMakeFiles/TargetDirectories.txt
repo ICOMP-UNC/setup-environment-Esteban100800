@@ -1,3 +1,9 @@
 /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles/OperatingSystems.dir
 /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles/edit_cache.dir
 /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles/rebuild_cache.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libdyn/CMakeFiles/DynamicLibrary.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libdyn/CMakeFiles/edit_cache.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libdyn/CMakeFiles/rebuild_cache.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libsta/CMakeFiles/StaticLibrary.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libsta/CMakeFiles/edit_cache.dir
+/home/esteban/Documentos/setup-environment-Esteban100800/lib/libsta/CMakeFiles/rebuild_cache.dir

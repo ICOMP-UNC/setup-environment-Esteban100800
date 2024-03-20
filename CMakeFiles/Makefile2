@@ -64,29 +64,65 @@ CMAKE_BINARY_DIR = /home/esteban/Documentos/setup-environment-Esteban100800
 
 # The main recursive "all" target.
 all: CMakeFiles/OperatingSystems.dir/all
+all: lib/libdyn/all
+all: lib/libsta/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: lib/libdyn/preinstall
+preinstall: lib/libsta/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/OperatingSystems.dir/clean
+clean: lib/libdyn/clean
+clean: lib/libsta/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory lib/libdyn
+
+# Recursive "all" directory target.
+lib/libdyn/all: lib/libdyn/CMakeFiles/DynamicLibrary.dir/all
+.PHONY : lib/libdyn/all
+
+# Recursive "preinstall" directory target.
+lib/libdyn/preinstall:
+.PHONY : lib/libdyn/preinstall
+
+# Recursive "clean" directory target.
+lib/libdyn/clean: lib/libdyn/CMakeFiles/DynamicLibrary.dir/clean
+.PHONY : lib/libdyn/clean
+
+#=============================================================================
+# Directory level rules for directory lib/libsta
+
+# Recursive "all" directory target.
+lib/libsta/all: lib/libsta/CMakeFiles/StaticLibrary.dir/all
+.PHONY : lib/libsta/all
+
+# Recursive "preinstall" directory target.
+lib/libsta/preinstall:
+.PHONY : lib/libsta/preinstall
+
+# Recursive "clean" directory target.
+lib/libsta/clean: lib/libsta/CMakeFiles/StaticLibrary.dir/clean
+.PHONY : lib/libsta/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/OperatingSystems.dir
 
 # All Build rule for target.
-CMakeFiles/OperatingSystems.dir/all:
+CMakeFiles/OperatingSystems.dir/all: lib/libdyn/CMakeFiles/DynamicLibrary.dir/all
+CMakeFiles/OperatingSystems.dir/all: lib/libsta/CMakeFiles/StaticLibrary.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles --progress-num=1,2,3 "Built target OperatingSystems"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles --progress-num=3,4,5 "Built target OperatingSystems"
 .PHONY : CMakeFiles/OperatingSystems.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OperatingSystems.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OperatingSystems.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 0
 .PHONY : CMakeFiles/OperatingSystems.dir/rule
@@ -99,6 +135,58 @@ OperatingSystems: CMakeFiles/OperatingSystems.dir/rule
 CMakeFiles/OperatingSystems.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OperatingSystems.dir/build.make CMakeFiles/OperatingSystems.dir/clean
 .PHONY : CMakeFiles/OperatingSystems.dir/clean
+
+#=============================================================================
+# Target rules for target lib/libdyn/CMakeFiles/DynamicLibrary.dir
+
+# All Build rule for target.
+lib/libdyn/CMakeFiles/DynamicLibrary.dir/all:
+	$(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles --progress-num=1,2 "Built target DynamicLibrary"
+.PHONY : lib/libdyn/CMakeFiles/DynamicLibrary.dir/all
+
+# Build rule for subdir invocation for target.
+lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libdyn/CMakeFiles/DynamicLibrary.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 0
+.PHONY : lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule
+
+# Convenience name for target.
+DynamicLibrary: lib/libdyn/CMakeFiles/DynamicLibrary.dir/rule
+.PHONY : DynamicLibrary
+
+# clean rule for target.
+lib/libdyn/CMakeFiles/DynamicLibrary.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib/libdyn/CMakeFiles/DynamicLibrary.dir/build.make lib/libdyn/CMakeFiles/DynamicLibrary.dir/clean
+.PHONY : lib/libdyn/CMakeFiles/DynamicLibrary.dir/clean
+
+#=============================================================================
+# Target rules for target lib/libsta/CMakeFiles/StaticLibrary.dir
+
+# All Build rule for target.
+lib/libsta/CMakeFiles/StaticLibrary.dir/all:
+	$(MAKE) $(MAKESILENT) -f lib/libsta/CMakeFiles/StaticLibrary.dir/build.make lib/libsta/CMakeFiles/StaticLibrary.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib/libsta/CMakeFiles/StaticLibrary.dir/build.make lib/libsta/CMakeFiles/StaticLibrary.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles --progress-num=6,7 "Built target StaticLibrary"
+.PHONY : lib/libsta/CMakeFiles/StaticLibrary.dir/all
+
+# Build rule for subdir invocation for target.
+lib/libsta/CMakeFiles/StaticLibrary.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/libsta/CMakeFiles/StaticLibrary.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles 0
+.PHONY : lib/libsta/CMakeFiles/StaticLibrary.dir/rule
+
+# Convenience name for target.
+StaticLibrary: lib/libsta/CMakeFiles/StaticLibrary.dir/rule
+.PHONY : StaticLibrary
+
+# clean rule for target.
+lib/libsta/CMakeFiles/StaticLibrary.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib/libsta/CMakeFiles/StaticLibrary.dir/build.make lib/libsta/CMakeFiles/StaticLibrary.dir/clean
+.PHONY : lib/libsta/CMakeFiles/StaticLibrary.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

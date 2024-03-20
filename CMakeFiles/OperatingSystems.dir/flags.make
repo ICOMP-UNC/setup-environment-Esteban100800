@@ -4,7 +4,7 @@
 # compile C with /usr/lib/ccache/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/esteban/Documentos/setup-environment-Esteban100800/include
+C_INCLUDES = -I/home/esteban/Documentos/setup-environment-Esteban100800/include -I/home/esteban/Documentos/setup-environment-Esteban100800/lib/libdyn/include -I/home/esteban/Documentos/setup-environment-Esteban100800/lib/libsta/include
 
 C_FLAGS = 
 

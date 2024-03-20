@@ -108,6 +108,8 @@ OperatingSystems_EXTERNAL_OBJECTS =
 OperatingSystems: CMakeFiles/OperatingSystems.dir/src/greetings.c.o
 OperatingSystems: CMakeFiles/OperatingSystems.dir/src/main.c.o
 OperatingSystems: CMakeFiles/OperatingSystems.dir/build.make
+OperatingSystems: lib/libsta/libStaticLibrary.a
+OperatingSystems: lib/libdyn/libDynamicLibrary.so
 OperatingSystems: CMakeFiles/OperatingSystems.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/esteban/Documentos/setup-environment-Esteban100800/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable OperatingSystems"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OperatingSystems.dir/link.txt --verbose=$(VERBOSE)
