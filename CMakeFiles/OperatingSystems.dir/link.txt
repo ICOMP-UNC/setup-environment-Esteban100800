@@ -1,0 +1,1 @@
+/usr/lib/ccache/cc CMakeFiles/OperatingSystems.dir/src/greetings.c.o CMakeFiles/OperatingSystems.dir/src/main.c.o -o OperatingSystems 
