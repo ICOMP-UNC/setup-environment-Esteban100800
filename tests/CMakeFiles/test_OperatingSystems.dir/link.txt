@@ -1,0 +1,1 @@
+/usr/lib/ccache/cc  -g -fprofile-arcs -ftest-coverage --coverage  -lgcov --coverage CMakeFiles/test_OperatingSystems.dir/unit/test_unity_program.c.o CMakeFiles/test_OperatingSystems.dir/__/src/logic.c.o -o test_OperatingSystems  ../_deps/unity-build/libunity.a 
