@@ -8,24 +8,25 @@ runs:
       shell: bash
       run: |
         PROJECT_PATH=$(pwd)
-
-        # ToDo: Add documentation and describe better this command
+        
         ctest --test-dir build/tests --output-on-failure
 
-        # ToDo: Add documentation and describe better this command
-
-
+        # Verificar si los tests fallaron
         gcovr -r $PROJECT_PATH . > $PROJECT_PATH/coverage.txt
 
-        echo "Runnig: gcovr -r $PROJECT_PATH ."
+        echo "Running: gcovr -r $PROJECT_PATH ."
 
+        # Imprime el reporte de coverage
         cat $PROJECT_PATH/coverage.txt
 
-        # Find the value of correct coverage
-        # ToDo: Add documentation and describe better this command
+        # Extraer el porcentaje de cobertura
+        #  grep "TOTAL" $PROJECT_PATH/coverage.txt: Filtra las líneas que contienen "TOTAL" (probablemente la línea de resumen)
+        #  awk '{print $NF}' | cut -d '%' -f 1: Extrae el valor numérico antes del símbolo de porcentaje (%) del último campo
         COVERAGE_RESULT=$(grep "TOTAL" $PROJECT_PATH/coverage.txt | awk '{print $NF}' | cut -d '%' -f 1)
 
-        # Coverage lines GT 20
+        # Verificar si la cobertura esta dentro del umbral
+        #  -eq 1: Verifica si el resultado de la expresión es igual a 1 (verdadero)
+
         if [ "$(echo "$COVERAGE_RESULT > 20" | bc)" -eq 1 ]; then
             echo "Coverage is greater than 20%. Nice!"
             exit 0
@@ -39,5 +40,5 @@ runs:
       if: failure()
       with:
         name: Tests or coverage errors!!!
-        path: $(pwd)/error_flag.txt
+        path: $(pwd)/error_flag.txt 
         retention-days: 1
