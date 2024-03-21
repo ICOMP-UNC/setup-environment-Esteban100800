@@ -1,6 +1,6 @@
 _deps/
 
- Compiled object files
+#Compiled object files
 *.o
 
 # Executables
