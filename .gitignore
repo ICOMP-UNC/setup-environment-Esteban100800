@@ -1,4 +1,6 @@
-# Compiled object files
+_deps/
+
+ Compiled object files
 *.o
 
 # Executables
@@ -16,7 +18,7 @@
 /build/
 
 
-/_deps/
+
 # External directoy
 /external/
 
