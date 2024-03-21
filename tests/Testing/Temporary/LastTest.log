@@ -1,10 +1,10 @@
-Start testing: Mar 20 21:37 -03
+Start testing: Mar 20 21:55 -03
 ----------------------------------------------------------
 1/1 Testing: test_OperatingSystems
 1/1 Test: test_OperatingSystems
 Command: "/home/esteban/Documentos/setup-environment-Esteban100800/tests/test_OperatingSystems"
 Directory: /home/esteban/Documentos/setup-environment-Esteban100800/tests
-"test_OperatingSystems" start time: Mar 20 21:37 -03
+"test_OperatingSystems" start time: Mar 20 21:55 -03
 Output:
 ----------------------------------------------------------
 /home/esteban/Documentos/setup-environment-Esteban100800/tests/unit/test_unity_program.c:36:test_logic_add:PASS
@@ -16,11 +16,11 @@ Output:
 4 Tests 0 Failures 0 Ignored 
 OK
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_OperatingSystems" end time: Mar 20 21:37 -03
+"test_OperatingSystems" end time: Mar 20 21:55 -03
 "test_OperatingSystems" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Mar 20 21:37 -03
+End testing: Mar 20 21:55 -03

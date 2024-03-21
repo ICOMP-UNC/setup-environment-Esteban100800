@@ -14,7 +14,7 @@ file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/../src/logic.c)
 target_link_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/extrernal)
 
 if (RUN_COVERAGE)
-    message("Running coverage")
+    message("Coverage enabled")
     find_program(LCOV_PATH lcov)
     if(NOT LCOV_PATH)
         message(FATAL_ERROR "lcov not found!")
