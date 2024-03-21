@@ -10,7 +10,7 @@ runs:
         PROJECT_PATH=$(pwd)
 
         # ToDo: Add documentation and describe better this command
-        ctest --test-dir /tests --output-on-failure
+        ctest --test-dir built/tests --output-on-failure
 
         # ToDo: Add documentation and describe better this command
 
