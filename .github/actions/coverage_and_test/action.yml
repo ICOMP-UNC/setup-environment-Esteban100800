@@ -1,0 +1,46 @@
+name: "Test and coverage check"
+description: "Test and coverage check with gcovr, pass if coverage is greater than 20%"
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Run coverage"
+      shell: bash
+      run: |
+        # Obtener la ruta del proyecto
+        PROJECT_PATH=$(pwd)
+
+        # Ejecutar los tests con ctest en el directorio correspondiente
+        # Este comando es para automticamente correr los tests.
+        #--test-dir build/tests indica donde se encuentran los tests
+        #--output-on-failure indica que se muestre la salida en caso de fallo
+        ctest --test-dir build/tests --output-on-failure
+
+        # Generar el reporte de cobertura con gcovr y guardarlo en un archivo
+        gcovr -r $PROJECT_PATH . > $PROJECT_PATH/coverage.txt
+
+        # Mostrar el comando utilizado para generar el reporte
+        echo "Runnig: gcovr -r $PROJECT_PATH ."
+
+        # Mostrar el contenido del archivo de cobertura
+        cat $PROJECT_PATH/coverage.txt
+
+        # Encontrar el valor de cobertura correcto
+        COVERAGE_RESULT=$(grep "TOTAL" $PROJECT_PATH/coverage.txt | awk '{print $NF}' | cut -d '%' -f 1)
+
+        # Comprobar si la cobertura es mayor que el 20%
+        if [ "$(echo "$COVERAGE_RESULT > 20" | bc)" -eq 1 ]; then
+            echo "Coverage is greater than 20%. Nice!"
+            exit 0
+        else
+            echo "Error: Coverage is less than or equal to 20%"
+            exit 1
+        fi
+
+    # Subir los errores como un artefacto en caso de fallo
+    - uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: Tests or coverage errors!!!
+        path: $(pwd)/error_flag.txt
+        retention-days: 1
