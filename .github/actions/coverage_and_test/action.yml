@@ -11,6 +11,9 @@ runs:
         PROJECT_PATH=$(pwd)
 
         # Ejecutar los tests con ctest en el directorio correspondiente
+        # Este comando es para automticamente correr los tests.
+        #--test-dir build/tests indica donde se encuentran los tests
+        #--output-on-failure indica que se muestre la salida en caso de fallo
         ctest --test-dir build/tests --output-on-failure
 
         # Generar el reporte de cobertura con gcovr y guardarlo en un archivo

@@ -13,14 +13,23 @@ runs:
 
         echo $PROJECT_PATH
 
-        # ToDo: Add documentation about 'tr' command and describe better this command
+        # -tr  es usado para reemplazar saltos de linea por espacios
+        # Se asigna la lista de archivos (-f) a formatear a la variable SOURCE_FILES con el comando find
+        # Se redirige la salida de este comando al archivo $ERROR_FILE_FLAG
+        # $SOURCE_FILES contiene la lista de archivos a formatear (se van agregando)
+        # https://geekland.eu/uso-del-comando-tr-en-linux-y-unix-con-ejemplos/
         SOURCE_FILES=$(find $PROJECT_PATH/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
         SOURCE_FILES+=$(find $PROJECT_PATH/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
         SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
 
         ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
 
-        # ToDo: Add documentation and describe better this command
+        # clang-format otorga la opcion -i para modificar los archivos directamente
+        # Se redirige la salida de este comando al archivo $ERROR_FILE_FLAG (Esto se hace para que el archivo $ERROR_FILE_FLAG contenga la salida del comando)
+        # Ademas, se asigna el resultado a la variable CLANG_COMMAND
+        # $SOURCE_FILES contiene la lista de archivos a formatear
+        # clang provee un "front-end" para los lenguajes en la familia c.
+        # https://clang.llvm.org/docs/UsersManual.html
         CLANG_COMMAND=$(clang-format -i $SOURCE_FILES) > ${ERROR_FILE_FLAG}
 
         echo "Running: clang-format -i $SOURCE_FILES"

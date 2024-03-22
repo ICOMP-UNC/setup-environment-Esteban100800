@@ -10,19 +10,23 @@ runs:
           # We only make check, not changes
           DOX_CONF_FILE=$(pwd)/Doxyfile
 
-          # ToDo: Add documentation about this command and describe better
+          # Este conjunto de comandos es para configurar el archivo de configuración de Doxygen
+          # Proporciona la ruta de los archivos a documentar.
           {
               cat $DOX_CONF_FILE
               echo "INPUT" = $(pwd)/src $(pwd)/include $(pwd)/lib
           } > $DOX_CONF_FILE
 
           # Generate documentation
-          # ToDo: Add documentation about this command and describe better
+          # Ejecuta con privilegios dot -c, que es el comando para generar la documentación (-c indica que se limpie la documentación anterior)
           sudo dot -c
 
           ERROR_FILE_FLAG=$(pwd)/dox_errors.txt
 
-          # ToDo: Add documentation and describe better this command
+          # Ejecucion de doxygen -s (sin stdout) para asignar el resultado a la variable DOXYGEN_COMMAND
+          # Ademas, redirige la salida de este comando al archivo $ERROR_FILE_FLAG.
+          # $DOXYGEN_COMMAND contiene la salida del comando
+          # https://www.doxygen.nl/manual/starting.html
           DOXYGEN_COMMAND=$(doxygen -s $DOX_CONF_FILE) > $ERROR_FILE_FLAG
 
           if [ -s $ERROR_FILE_FLAG ]; then
